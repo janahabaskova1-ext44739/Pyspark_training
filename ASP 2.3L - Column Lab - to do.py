@@ -57,7 +57,7 @@ display(total_df.select("cntry_born_key","cntry_citizen_key", "total_key"))
 
 # COMMAND ----------
 
-title_df = total_df.#FILL_IN
+title_df = total_df.#TO DO
 
 display(title_df)
 
