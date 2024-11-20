@@ -17,8 +17,8 @@
 
 # COMMAND ----------
 
-
-# TO DO
+# MAGIC %sql
+# MAGIC # TO DO
 
 # COMMAND ----------
 
