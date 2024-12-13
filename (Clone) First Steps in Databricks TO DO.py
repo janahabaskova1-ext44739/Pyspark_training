@@ -139,7 +139,7 @@ df_titanic = # To do
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC -- # Rozdel data podle tridy a mista nalodeni
+# MAGIC -- # Rozdel data podle tridy a mista nalodeni a vytvor jednoduchy graf.
 # MAGIC -- TO DO
 
 # COMMAND ----------
@@ -162,6 +162,9 @@ dbutils.widgets.text("Pohlaví", "female")
 # MAGIC
 # MAGIC
 # MAGIC Obohať předchozí kód pomocí widgetu **`getArgument`**
+
+# COMMAND ----------
+
 # MAGIC ##TO DO
 
 
