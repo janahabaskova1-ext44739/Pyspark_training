@@ -82,6 +82,24 @@ print("Run python")
 # MAGIC
 # MAGIC 1. **tučně**
 # MAGIC 2. *kurzíva*
+# MAGIC- [markdown-documentation](https://www.markdownguide.org/cheat-sheet/) 
+
+
+# MAGIC| Element         | Markdown Syntax |
+# MAGIC|-----------------|-----------------|
+# MAGIC| Heading         | `#H1` `##H2` `###H3` `#### H4` `##### H5` `###### H6` |
+# MAGIC| Block quote     | `> blockquote` |
+# MAGIC| Bold            | `**bold**` |
+# MAGIC| Italic          | `*italicized*` |
+# MAGIC| Strikethrough   | `~~strikethrough~~` |
+# MAGIC| Horizontal Rule | `---` |
+# MAGIC| Code            | ``` `code` ``` |
+# MAGIC| Link            | `[text](https://www.example.com)` |
+# MAGIC| Image           | `![alt text](image.jpg)`|
+# MAGIC| Ordered List    | `1. First items` <br> `2. Second Item` <br> `3. Third Item` |
+# MAGIC| Unordered List  | `- First items` <br> `- Second Item` <br> `- Third Item` |
+# MAGIC| Code Block      | ```` ``` ```` <br> `code block` <br> ```` ``` ````|
+# MAGIC| Table           |<code> &#124; col &#124; col &#124; col &#124; </code> <br> <code> &#124;---&#124;---&#124;---&#124; </code> <br> <code> &#124; val &#124; val &#124; val &#124; </code> <br> <code> &#124; val &#124; val &#124; val &#124; </code> <br>|
 # MAGIC
 
 # COMMAND ----------
@@ -93,17 +111,17 @@ print("Run python")
 
 # COMMAND ----------
 
-# načti data z tabulky "cip_catalog.cleansed_dwh_owner.parties" 
+# načti data z tabulky titanic ("prod_cze_peal00_lab_catalog.e2e_workshop.titanic") a zobraz data
 
-df_parties = # To do
+df_titanic = # To do
 
 
 # COMMAND ----------
 
 # MAGIC %sql
 # MAGIC
-# MAGIC -- načti data z tabulky "cip_catalog.cleansed_dwh_owner.parties" 
-
+# MAGIC -- načti data z tabulky titanic ("prod_cze_peal00_lab_catalog.e2e_workshop.titanic") pomocí SQL
+# MAGIC -- TO DO
 # COMMAND ----------
 
 # MAGIC %md
@@ -115,20 +133,14 @@ df_parties = # To do
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC -- Popis strukturu tabulky 'cip_catalog.cleansed_dwh_owner' 
+# MAGIC -- Popis strukturu tabulky titanic ("prod_cze_peal00_lab_catalog.e2e_workshop.titanic") 
 # MAGIC -- TO DO
 
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC -- 
-# MAGIC -- Select birth date and count the number of people born on each date
-# MAGIC SELECT PT_BIRTH_DATE AS birth_date,
-# MAGIC        COUNT(*) AS number_of_people
-# MAGIC FROM cip_catalog.cleansed_dwh_owner.parties
-# MAGIC WHERE YEAR(PT_BIRTH_DATE) >= 1920
-# MAGIC GROUP BY PT_BIRTH_DATE
-# MAGIC ORDER BY number_of_people DESC;
+# MAGIC -- # Rozdel data podle tridy a mista nalodeni
+# MAGIC -- TO DO
 
 # COMMAND ----------
 
@@ -141,7 +153,7 @@ df_parties = # To do
 
 # COMMAND ----------
 
-dbutils.widgets.text("csas_employee", "", "PT_JOB_STAFF_FLAG")
+dbutils.widgets.text("Pohlaví", "female")
 
 # COMMAND ----------
 
@@ -150,17 +162,8 @@ dbutils.widgets.text("csas_employee", "", "PT_JOB_STAFF_FLAG")
 # MAGIC
 # MAGIC
 # MAGIC Obohať předchozí kód pomocí widgetu **`getArgument`**
+# MAGIC ##TO DO
 
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC -- Select birth date and count the number of people born on each date
-# MAGIC SELECT PT_BIRTH_DATE AS birth_date,
-# MAGIC        COUNT(*) AS number_of_people
-# MAGIC FROM cip_catalog.cleansed_dwh_owner.parties
-# MAGIC WHERE YEAR(PT_BIRTH_DATE) >= 1920 AND PT_JOB_STAFF_FLAG = getArgument("csas_employee")
-# MAGIC GROUP BY PT_BIRTH_DATE
-# MAGIC ORDER BY number_of_people DESC;
 
 # COMMAND ----------
 
@@ -170,5 +173,4 @@ dbutils.widgets.text("csas_employee", "", "PT_JOB_STAFF_FLAG")
 
 # COMMAND ----------
 
-# MAGIC %sql
-# MAGIC REMOVE WIDGET csas_employee
+# MAGIC dbutils.widgets.remove("Pohlaví")
